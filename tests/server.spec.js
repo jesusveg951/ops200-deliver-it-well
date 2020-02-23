@@ -38,12 +38,22 @@ describe('server/app.js', function() {
     });
   });
 
-  it('page says heck yeah its working', (done) => {
+  it('html has h2 tag saying heck yeah its working', (done) => {
     chai.request(server)
       .get('/')
       .end((err, res) => {
         expect(err).not.exist;
         expect(JSON.stringify(res.text)).to.contain('heck yeah its working');
+        done();
+      });
+    });
+
+  it('html has h3 tag saying asdf', (done) => {
+    chai.request(server)
+      .get('/')
+      .end((err, res) => {
+        expect(err).not.exist;
+        expect(JSON.stringify(res.text)).to.contain('asdf');
         done();
       });
     });
