@@ -43,7 +43,7 @@ describe('server/app.js', function() {
       .get('/')
       .end((err, res) => {
         expect(err).not.exist;
-        expect(JSON.stringify(res.text)).to.contain('heck yeah its working');
+        expect(JSON.stringify(res.text)).to.contain('Asshole');
         done();
       });
     });
@@ -53,7 +53,7 @@ describe('server/app.js', function() {
       .get('/')
       .end((err, res) => {
         expect(err).not.exist;
-        expect(JSON.stringify(res.text)).to.contain('asf');
+        expect(JSON.stringify(res.text)).to.contain('asdf');
         done();
       });
     });
